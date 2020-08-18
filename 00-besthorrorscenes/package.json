@@ -1,0 +1,20 @@
+{
+  "name": "00-besthorrorscenes",
+  "version": "1.0.0",
+  "description": "[https://besthorrorscenes.com](https://besthorrorscenes.com) <br /> ![Best Horrer Scenes Website image](./assets/images/original-site.png)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "author": "Jione Eu",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^4.2.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
