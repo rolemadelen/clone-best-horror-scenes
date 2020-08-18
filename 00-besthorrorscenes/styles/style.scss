@@ -1,44 +1,181 @@
 /* CLEAR DEFAULT STYLING */
 * {
+    border: 0;
     margin: 0;
     padding: 0;
+    font: inherit;
+    vertical-align: baseline;
+    font-size: 100%;
 }
 
-/* Set full height */
+/* Main Layout */
+$full-height: 100%;
+$color-orange: #e7473c;
+$color-grey: #333;
+$color-white: #fff;
+
 html, body {
-    height: 100%;
+    height: $full-height;
+    font-family: 'Montserrat',Univers,Helvetica Neue,Helvetica,Myriad Pro,Myriad,Geneva,Arial,sans-serif;
+    background-color: #f0f0f0;
+    font-size: 10px;
+    color: $color-grey;
 }
 
 #best-horror-scenes {
     display: flex;
-    height: 100%;
+    height: $full-height;
 }
 
-$DEBUG-BORDER-BLUE: blue;
-$DEBGU-BORDER-RED: red;
+::selection {
+    background: #fff;
+    text-shadow: none;
+}
 
+/** Main Layout -> Left **/
 #left-layout {
-    height: 100%;
+    height: $full-height;
     flex: 45%;
     width: 45%;
-    background-color: #fff;
 
     position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
     overflow-x: hidden;
 }
 
-#right-layout {
-    flex: 55%;
-    margin-left: 45%;
-    background: #f00;
-    border: 2px solid $DEBGU-BORDER-RED;
-    word-wrap: wrap;
-    overflow-y: scroll;
+/** Main Layout -> Left -> header **/
+div#left-layout header {
+    padding: 10vh 0 72px 72px; // TODO: media-query
+    display: block;
+    color: $color-orange;
+    text-transform: uppercase;
 }
 
-pre {
-    white-space: pre-wrap;
+div#left-layout header div.ll-title {
+    font-size: 7.4rem;
+    line-height: 1.0;
+    letter-spacing: 5px;
+    transform: translateX(-.1em);
+}
+
+/** Main Layout -> Left -> x-body **/
+x-body div.ll-x-body {
+    padding: 72px 150px 72px 72px; // TODO: media-query
+}
+
+x-body .ll-interior {
+    color: $color-orange;
+}
+
+x-body .ll-interior p:nth-child(1) {
+    line-height: 1.2;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+x-body .ll-interior p:nth-child(2) {
+    font-size: 1.3em;
+    text-align: justify;
+    text-indent: -0.5em;
+}
+
+x-body nav {
+    margin-top: 2em;
+    font-size: 1.0em;
+    line-height: 1.7;
+    width: 100%;
+    display: block;
+}
+
+x-body nav a {
+    color: $color-grey;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    margin: 0 1em .5em 0;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/** Main Layout -> Right **/
+#right-layout {
+    flex: 45%;
+    margin-left: 45%;
+    background: $color-orange;
+    overflow-y: scroll;
+    color: $color-white;
+}
+
+#right-layout section article {
+    display: flex;
+    flex-direction: column;
+    padding: 72px;
+    background-image: linear-gradient(rgba(0,0,0,.08),transparent);
+}
+
+#right-layout section header {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 18px;
+    color: $color-white;
+}
+
+
+#right-layout section header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.7em;
+    line-height: 1.2;
+    padding-right: 1.0em;
+    position: relative;
+    text-transform: uppercase;
+}
+
+#right-layout section header div {
+    text-align: right;
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    transform: translateY(-0.1em);
+}
+
+#right-layout section article .rl-video {
+    box-shadow: 0 80px 80px -80px #000, 
+                0 0 12px rgba(0,0,0,.06), 
+                inset 0 0 0 1px rgba(0,0,0,.2);
+    padding-top: 56.25%;
+    position: relative;
+    z-index: 1;
+}
+
+#right-layout section article footer {
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    text-align: right;
+    padding: 24px 0;
+}
+
+#right-layout section article button.rl-rating-up, 
+#right-layout section article button.rl-rating-down {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    margin-left: 8px;
+    opacity: 0.7;
+    padding: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.25s;
+    cursor: pointer;
+}
+
+#right-layout section article button svg {
+    fill: $color-white;
+    height: 24px;
+    overflow: visible;
+    stroke: currentColor;
+    transition: stroke 0.2s;
+    width: 24px;
+    will-change: stroke;
 }
