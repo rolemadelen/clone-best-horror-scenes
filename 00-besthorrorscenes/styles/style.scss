@@ -1,0 +1,44 @@
+/* CLEAR DEFAULT STYLING */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set full height */
+html, body {
+    height: 100%;
+}
+
+#best-horror-scenes {
+    display: flex;
+    height: 100%;
+}
+
+$DEBUG-BORDER-BLUE: blue;
+$DEBGU-BORDER-RED: red;
+
+#left-layout {
+    height: 100%;
+    flex: 45%;
+    width: 45%;
+    background-color: #fff;
+
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+#right-layout {
+    flex: 55%;
+    margin-left: 45%;
+    background: #f00;
+    border: 2px solid $DEBGU-BORDER-RED;
+    word-wrap: wrap;
+    overflow-y: scroll;
+}
+
+pre {
+    white-space: pre-wrap;
+}
