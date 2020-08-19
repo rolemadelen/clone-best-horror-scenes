@@ -13,6 +13,7 @@ $full-height: 100%;
 $color-orange: #e7473c;
 $color-grey: #333;
 $color-white: #fff;
+$color-black: #000;
 
 html, body {
     height: $full-height;
@@ -82,7 +83,7 @@ x-body .ll-interior p:nth-child(2) {
 
 x-body nav {
     margin-top: 2em;
-    font-size: 1.0em;
+    font-size: 1.3em;
     line-height: 1.7;
     width: 100%;
     display: block;
@@ -95,6 +96,11 @@ x-body nav a {
     margin: 0 1em .5em 0;
     text-decoration: none;
     white-space: nowrap;
+}
+
+x-body nav a:hover {
+    box-shadow: 0 1px 0 $color-black;
+    color: $color-black;
 }
 
 /** Main Layout -> Right **/
