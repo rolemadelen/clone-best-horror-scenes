@@ -162,6 +162,15 @@ x-body nav a:hover {
     padding: 24px 0;
 }
 
+
+#right-layout section article footer button:hover {
+    opacity: 1.0;
+}
+
+#right-layout section article footer button:focus {
+    outline: none;
+}
+
 #right-layout section article button.rl-rating-up, 
 #right-layout section article button.rl-rating-down {
     display: block;
