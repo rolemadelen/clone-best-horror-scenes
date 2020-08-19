@@ -1,35 +1,49 @@
 import '../../styles/style.scss';
 'use strict';
 
-let contentArticle = document.querySelector("div#right-layout section");
+const contentArticle = document.querySelector("div#right-layout section");
 
 function createContent() {
     for (let i=51; i>0; --i) {
         // header
-        let newArticle = document.createElement('article');
-        let newHeader = document.createElement('header');
-        let newH2 = document.createElement('h2');
-        newH2.textContent = i + '. Geisel (????)';
-        let newDiv = document.createElement('div');
-        newDiv.textContent = 'Directed by Jione Eu';
+        const article = document.createElement('article');
+        const header = document.createElement('header');
+        let movieTitle = document.createElement('h2');
+        movieTitle.textContent = i + '. Geisel (????)';
+        let movieDirector = document.createElement('div');
+        movieDirector.textContent = 'Directed by Jione Eu';
         
-        newHeader.appendChild(newH2);
-        newHeader.appendChild(newDiv);
-        newArticle.appendChild(newHeader);
+        header.appendChild(movieTitle);
+        header.appendChild(movieDirector);
+        article.appendChild(header);
         
         // div rl-video 
-        newDiv = document.createElement('div');
-        newDiv.className ="rl-video";
-        newArticle.appendChild(newDiv);
+        movieDirector = document.createElement('div');
+        movieDirector.className ="rl-video";
+        article.appendChild(movieDirector);
 
         // footer
-        // newFooter = document.createElement('footer');
-        // newButton = document.createElement('button');
-        // newButton.className = "rl-raiting-up";
-        // newButton.typeName = "button"; // maybe?
-        // newSvg = document.createElement('svg');
+        const footer = document.createElement('footer');
+        footer.textContent = "Do you agree?";
 
-        contentArticle.appendChild(newArticle);
+        const ratePositiveBtn = document.createElement('button');
+        const rateNegativeBtn = document.createElement('button');
+        ratePositiveBtn.className = "rl-rating-up";
+        rateNegativeBtn.className = "rl-rating-down";
+        ratePositiveBtn.type = "button";
+        rateNegativeBtn.type = "button";
+
+        // positive and negative rating svg
+        const svgs = document.querySelectorAll('svg');
+        const positiveSvg = svgs[0].cloneNode(true);
+        const negativeSvg = svgs[1].cloneNode(true);
+
+        ratePositiveBtn.appendChild(positiveSvg);
+        rateNegativeBtn.appendChild(negativeSvg);
+        footer.appendChild(ratePositiveBtn);
+        footer.appendChild(rateNegativeBtn);
+        article.appendChild(footer);
+        contentArticle.appendChild(article);
     }
 }
 
