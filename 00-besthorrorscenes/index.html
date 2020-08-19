@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.scss">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
     <title>Document</title>
 </head>
 <body>
@@ -49,7 +50,14 @@
                         <h2>56. The Vanishing (1988)</h2>
                         <div>Directed by George Sluizer</div>
                     </header>
-                    <div class="rl-video">
+                    <div id="rl-content-video">
+                        <div class="plyr__video-embed" id="player">
+                            <iframe src="https://www.youtube.com/embed/q17PtQMyDdg"
+                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"  
+                            allowfullscreen
+                            allowtransparency
+                            ></iframe>
+                        </div>
                     </div>
                     <footer>
                         Do you agree?
