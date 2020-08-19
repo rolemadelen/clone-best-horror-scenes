@@ -1,15 +1,26 @@
+import Plyr from 'plyr';
 import '../../styles/style.scss';
 'use strict';
 
-const contentArticle = document.querySelector("div#right-layout section");
+// const contentVideo = document.querySelector('div#rl-content-vdieo');
 
+
+const contentArticle = document.querySelector("div#right-layout section");
+const movies = [
+    "The Omen (1976)",
+    "Les Diaboliques (1955)",
+    "The Shining (1980)",
+    "Jaws (1975)",
+    "Pet Sematary",
+    "Psycho (1960)"
+];
 function createContent() {
-    for (let i=51; i>0; --i) {
+    for (let i=55; i>45; --i) {
         // header
         const article = document.createElement('article');
         const header = document.createElement('header');
         let movieTitle = document.createElement('h2');
-        movieTitle.textContent = i + '. Geisel (????)';
+        movieTitle.textContent = i + ". " + ((movies[55-i] === undefined) ? "Geisel (2019)" : movies[55-i]);
         let movieDirector = document.createElement('div');
         movieDirector.textContent = 'Directed by Jione Eu';
         
@@ -18,9 +29,12 @@ function createContent() {
         article.appendChild(header);
         
         // div rl-video 
-        movieDirector = document.createElement('div');
-        movieDirector.className ="rl-video";
-        article.appendChild(movieDirector);
+        const videoContent = document.createElement('div');
+        videoContent.id = 'rl-content-video';
+        videoContent.className = "rl-video";
+        const player = (document.querySelector('div#player')).cloneNode(true);
+        videoContent.appendChild(player);
+        article.appendChild(videoContent);
 
         // footer
         const footer = document.createElement('footer');
