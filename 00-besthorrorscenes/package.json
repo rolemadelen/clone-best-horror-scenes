@@ -4,7 +4,7 @@
   "description": "[https://besthorrorscenes.com](https://besthorrorscenes.com) <br /> ![Best Horrer Scenes Website image](./assets/images/original-site.png)",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack"
   },
   "author": "Jione Eu",
   "license": "MIT",
