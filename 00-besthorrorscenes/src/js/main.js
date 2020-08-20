@@ -1,4 +1,3 @@
-import Plyr from 'plyr';
 import '../../styles/style.scss';
 'use strict';
 
