@@ -1,7 +1,7 @@
 import '../../styles/style.scss';
 'use strict';
 
-const geiselVideoSrc = "https://www.youtube.com/embed/EA8KDWc9Ch4" ;
+const geiselVideoSrc = "https://www.youtube.com/embed/gWRWHRKjmlc";
 const contentArticle = document.querySelector("div#right-layout section");
 const movies = [
     {title: "The Omen (1976)", director: 'Richard Donner', src: 'https://www.youtube.com/embed/m8GFEfNYS_E'},
@@ -19,7 +19,7 @@ function createContent() {
         let movieTitle = document.createElement('h2');
         movieTitle.textContent = i + ". " + ((movies[55-i] === undefined) ? "Geisel (2019)" : movies[55-i].title);
         let movieDirector = document.createElement('div');
-        movieDirector.textContent = 'Directed ' + ((movies[55-i] === undefined) ? "Jione Eu" : movies[55-i].director);
+        movieDirector.textContent = 'Directed by ' + ((movies[55-i] === undefined) ? "UCSD" : movies[55-i].director);
         
         header.appendChild(movieTitle);
         header.appendChild(movieDirector);
