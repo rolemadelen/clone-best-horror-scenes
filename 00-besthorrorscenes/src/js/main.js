@@ -2,17 +2,15 @@ import Plyr from 'plyr';
 import '../../styles/style.scss';
 'use strict';
 
-// const contentVideo = document.querySelector('div#rl-content-vdieo');
-
-
+const geiselVideoSrc = "https://www.youtube.com/embed/EA8KDWc9Ch4" ;
 const contentArticle = document.querySelector("div#right-layout section");
 const movies = [
-    "The Omen (1976)",
-    "Les Diaboliques (1955)",
-    "The Shining (1980)",
-    "Jaws (1975)",
-    "Pet Sematary",
-    "Psycho (1960)"
+    {title: "The Omen (1976)", director: 'Richard Donner', src: 'https://www.youtube.com/embed/m8GFEfNYS_E'},
+    {title: "Les Diaboliques (1955)", director: 'Henri-Georges Clouzot', src: 'https://www.youtube.com/embed/m8GFEfNYS_E'},
+    {title: "The Shining (1980)", director: 'Stanley Kubrick', src: 'https://www.youtube.com/embed/Sl0-YCsMtdA'},
+    {title: "Jaws (1975)", director: 'Steven Spielberg', src: 'https://www.youtube.com/embed/d5F0BBoKW9Q'},
+    {title: "Pet Sematary", director: 'Mary Lambert', src: 'https://www.youtube.com/embed/5aZyBV_5A_k'},
+    {title: "Psycho (1960)", director: 'Alfred Hitchcock', src: 'https://www.youtube.com/embed/k8HUehU8B_s'}
 ];
 function createContent() {
     for (let i=55; i>45; --i) {
@@ -20,9 +18,9 @@ function createContent() {
         const article = document.createElement('article');
         const header = document.createElement('header');
         let movieTitle = document.createElement('h2');
-        movieTitle.textContent = i + ". " + ((movies[55-i] === undefined) ? "Geisel (2019)" : movies[55-i]);
+        movieTitle.textContent = i + ". " + ((movies[55-i] === undefined) ? "Geisel (2019)" : movies[55-i].title);
         let movieDirector = document.createElement('div');
-        movieDirector.textContent = 'Directed by Jione Eu';
+        movieDirector.textContent = 'Directed ' + ((movies[55-i] === undefined) ? "Jione Eu" : movies[55-i].director);
         
         header.appendChild(movieTitle);
         header.appendChild(movieDirector);
@@ -33,6 +31,8 @@ function createContent() {
         videoContent.id = 'rl-content-video';
         videoContent.className = "rl-video";
         const player = (document.querySelector('div#player')).cloneNode(true);
+        player.querySelector('iframe').src = (movies[55-i]) ? movies[55-i].src : geiselVideoSrc;
+
         videoContent.appendChild(player);
         article.appendChild(videoContent);
 
